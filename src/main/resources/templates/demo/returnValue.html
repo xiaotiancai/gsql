@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>esoure</title>
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/esoure/esoure.css}">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">易享</a>
+            </li>
+
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: black">文档直通车</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: black">建议反馈</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        </br>
+    </div>
+</div>
+<div class="container">
+    <form class="form-inline my-2 my-lg-0" action="/login">
+        <input class="form-control mr-sm-2" maxlength="2048"  style="width: 480px" type="search" placeholder="文档名 | 书名 | 内容" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        </br>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>文件名:</th>
+                        <th>文件类型:</th>
+                        <th>作者:</th>
+                        <th>文件大小:</th>
+                        <th>文件上传时间:</th>
+                        <th>文件来源</th>
+                    </tr>
+                    </thead>
+                    <tr th:each="file:${file}">
+                        <td th:text="${file.fileName}"></td>
+                        <td th:text="${file.fileType}"></td>
+                        <td th:text="${file.author}"></td>
+                        <td th:text="${file.size}"></td>
+                        <td th:text="${file.uploadTime}"></td>
+                        <td th:text="${file.website}"></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>底部内容</p>
+</div>
+<script th:src="@{/jquery/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
+</body>
+</html>

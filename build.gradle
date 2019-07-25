@@ -1,0 +1,48 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	maven{ url ='http://maven.aliyun.com/nexus/content/groups/public/' }
+	mavenCentral()
+}
+
+dependencies {
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile 'com.alibaba:fastjson:1.2.6'
+	compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+	compile 'commons-httpclient:commons-httpclient:3.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	//redis操作 不支持过期时间
+//	compile group: 'redis.clients', name: 'jedis', version: '3.0.1'
+	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+	implementation('org.apache.httpcomponents:httpclient:4.5.8')
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-json'
+
+	compile('com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.5')
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.5')
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.5')
+	compile('com.fasterxml.jackson.core:jackson-core:2.9.5')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.9.5')
+	compile('com.fasterxml.jackson.core:jackson-annotations:2.9.5')
+
+
+
+	implementation('org.apache.commons:commons-pool2:2.6.0')
+	implementation('org.apache.commons:commons-lang3:3.8.1')
+	compile 'com.googlecode.aviator:aviator:4.2.0'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'org.redisson', name: 'redisson', version: '3.11.1'
+
+}
