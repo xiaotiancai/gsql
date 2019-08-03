@@ -28,3 +28,6 @@
 有个demo写在main函数中，我自己结合公司的框架进行了集成以及更新。
 
 直接new一个对象，再也不用写sql了！
+
+
+简书见：https://www.jianshu.com/p/231ff997c7de
